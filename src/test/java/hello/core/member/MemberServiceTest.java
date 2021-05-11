@@ -30,7 +30,7 @@ class MemberServiceTest {
         Member member1 = new Member(1L, "name", Grade.VIP);
 
         List<Member> list = new ArrayList<>();
-                String::length
+
         //then
         Assertions.assertThat(member).isEqualTo(findMember);
     }
