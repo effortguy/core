@@ -31,5 +31,19 @@ class OrderServiceTest {
         Order order = orderService.createOrder(memberId, "itemA", 10000);
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000L);
     }
+    
+// 생성자의 파라미터 중 하나라도 빈에 등록되어 있지 않으면 에러
+//    @Test
+//    void getMemberRepositoryBean() {
+//        ApplicationContext ac = new AnnotationConfigApplicationContext(AutoAppConfig.class);
+//        MemberRepository memberRepositoryBean = ac.getBean(MemberRepository.class);
+//
+//        System.out.println(memberRepositoryBean);
+//    }
 
+    @Test
+    void fieldInjectionTest() {
+        OrderServiceImpl orderService = new OrderServiceImpl();
+        orderService.createOrder(1L, "itemA", 10000);
+    }
 }

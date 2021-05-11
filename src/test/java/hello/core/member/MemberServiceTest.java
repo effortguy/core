@@ -5,6 +5,9 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 class MemberServiceTest {
 
     MemberService memberService;
@@ -24,6 +27,10 @@ class MemberServiceTest {
         memberService.join(member);
         Member findMember = memberService.findMember(1L);
 
+        Member member1 = new Member(1L, "name", Grade.VIP);
+
+        List<Member> list = new ArrayList<>();
+                String::length
         //then
         Assertions.assertThat(member).isEqualTo(findMember);
     }
